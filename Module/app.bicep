@@ -3,6 +3,10 @@ targetScope = 'resourceGroup'
 param webAppName string 
 param appServicePlan string
 param appInsightsKey string
+param subnetidforprivatelink string
+param privateEndpointName string
+param privateLinkConnectionName string
+
 
 resource webApplication 'Microsoft.Web/sites@2022-03-01' = {
   name: webAppName
@@ -33,3 +37,27 @@ resource appsetting 'Microsoft.Web/sites/config@2022-03-01' = {
     ]
   }  
 }
+
+
+resource privateEndpoint 'Microsoft.Network/privateEndpoints@2022-01-01' = {
+  name: privateEndpointName
+  location: resourceGroup().location
+  properties: {
+    subnet: {
+      id: subnetidforprivatelink
+    }
+    privateLinkServiceConnections: [
+      {
+        name: privateLinkConnectionName
+        properties: {
+          privateLinkServiceId: webApplication.id 
+          groupIds: [
+            'sites'
+          ]
+        }
+      }
+    ]
+  }
+}
+
+output webappid string = webApplication.id

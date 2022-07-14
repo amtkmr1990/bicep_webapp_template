@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "eastus" 
+        },
+        "rgName": {
+            "value": "rg-amtkmr-dev" 
+        },
+        "appServiceName": {
+            "value": "asp-amtkmr-dev" 
+        },
+        "webAppName": {
+            "value": "as-amtkmr-dev" 
+        },
+        "subnetidforprivatelink": {
+            "value": "/subscriptions/bba2c874-6268-48fb-b2c2-4b110514f730/resourceGroups/rg-it-dev/providers/Microsoft.Network/virtualNetworks/vnet-it-dev/subnets/privatelinksubnet" 
+        },
+        "privateendpointname": {
+            "value": "webappprivateendpoint" 
+        },
+        "privateLinkConnectionName": {
+            "value": "webappprivatelink" 
+        } 
+    }
+}

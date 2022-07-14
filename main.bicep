@@ -4,6 +4,10 @@ param location string
 param rgName string
 param appServiceName string 
 param webAppName string 
+param subnetidforprivatelink  string
+param privateendpointname string
+param privateLinkConnectionName string
+
 
 resource rg 'Microsoft.Resources/resourceGroups@2021-01-01' = {
   name: rgName
@@ -25,6 +29,9 @@ module app 'Module/app.bicep' = {
     appServicePlan: asp.outputs.aspname 
     webAppName: webAppName
     appInsightsKey: appinsights.outputs.appInsightsKey
+    subnetidforprivatelink: subnetidforprivatelink 
+    privateEndpointName: privateendpointname 
+    privateLinkConnectionName: privateLinkConnectionName
   }
   dependsOn: [
     asp,appinsights
