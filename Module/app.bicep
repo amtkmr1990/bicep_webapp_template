@@ -6,6 +6,7 @@ param appInsightsKey string
 param subnetidforprivatelink string
 param privateEndpointName string
 param privateLinkConnectionName string
+param subnetidforvnetinjection string
 
 
 resource webApplication 'Microsoft.Web/sites@2022-03-01' = {
@@ -59,5 +60,14 @@ resource privateEndpoint 'Microsoft.Network/privateEndpoints@2022-01-01' = {
     ]
   }
 }
+
+resource webAppNetworkConfig 'Microsoft.Web/sites/networkConfig@2022-03-01' = {
+  parent: webApplication
+  name: 'virtualNetwork'
+  properties: {
+    subnetResourceId: subnetidforvnetinjection
+  }
+}
+
 
 output webappid string = webApplication.id

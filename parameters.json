@@ -22,6 +22,9 @@
         },
         "privateLinkConnectionName": {
             "value": "webappprivatelink" 
-        } 
+        },
+        "subnetidforvnetinjection": {
+            "value": "/subscriptions/bba2c874-6268-48fb-b2c2-4b110514f730/resourceGroups/rg-it-dev/providers/Microsoft.Network/virtualNetworks/vnet-it-dev/subnets/vnetintegration" 
+        }  
     }
 }

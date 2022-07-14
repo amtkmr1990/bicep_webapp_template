@@ -7,6 +7,7 @@ param webAppName string
 param subnetidforprivatelink  string
 param privateendpointname string
 param privateLinkConnectionName string
+param subnetidforvnetinjection string
 
 
 resource rg 'Microsoft.Resources/resourceGroups@2021-01-01' = {
@@ -32,6 +33,7 @@ module app 'Module/app.bicep' = {
     subnetidforprivatelink: subnetidforprivatelink 
     privateEndpointName: privateendpointname 
     privateLinkConnectionName: privateLinkConnectionName
+    subnetidforvnetinjection: subnetidforvnetinjection
   }
   dependsOn: [
     asp,appinsights
