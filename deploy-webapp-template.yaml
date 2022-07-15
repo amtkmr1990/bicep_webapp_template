@@ -28,6 +28,7 @@ stages:
     jobs:
       - deployment: devployBicep
         displayName: 'Deploy Bicep at Dev' 
+        environment: dev
         workspace:
           clean: all
         strategy:
