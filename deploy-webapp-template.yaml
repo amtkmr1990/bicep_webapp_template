@@ -9,18 +9,36 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
-  - stage: dev
-    displayName: 'Create Infra Dev Env'
-    
+  - stage: validation
+    displayName: 'validate the changes before deployment'
     jobs:
-      - job: devployBicep
-        displayName: 'Deploy Bicep at Dev' 
-
+      - job: validatewebtemplate
         steps:
           - task: AzureCLI@2
             inputs:
               azureSubscription: 'sc-amtkmr-dev'
               scriptType: 'bash'
               scriptLocation: 'inlineScript'
-              inlineScript: 'az deployment sub create -f main.bicep -l eastus -p parameters.json'
-   
+              inlineScript: 'az deployment sub what-if -f main.bicep -l eastus -p parameters.json'
+          
+  - stage: dev
+    displayName: 'Create Infra Dev Env'
+    
+    
+    jobs:
+      - deployment: devployBicep
+        displayName: 'Deploy Bicep at Dev' 
+        workspace:
+          clean: all
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+      
+              - task: AzureCLI@2
+                inputs:
+                  azureSubscription: 'sc-amtkmr-dev'
+                  scriptType: 'bash'
+                  scriptLocation: 'inlineScript'
+                  inlineScript: 'az deployment sub create -f main.bicep -l eastus -p parameters.json'
+      
