@@ -22,5 +22,5 @@ stages:
               azureSubscription: 'sc-amtkmr-dev'
               scriptType: 'bash'
               scriptLocation: 'inlineScript'
-              inlineScript: 'az deployment sub create -f main.bicep -l eastus -p parameter.json'
+              inlineScript: 'az deployment sub create -f main.bicep -l eastus -p parameters.json'
    
