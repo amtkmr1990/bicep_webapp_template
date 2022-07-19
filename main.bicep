@@ -1,6 +1,6 @@
 targetScope = 'subscription'
 
-param location string 
+param location string = deployment().location
 param rgName string
 param appServiceName string 
 param webAppName string 
@@ -8,7 +8,7 @@ param subnetidforprivatelink  string
 param privateendpointname string
 param privateLinkConnectionName string
 param subnetidforvnetinjection string
-
+param privateDnsZonesId string
 
 resource rg 'Microsoft.Resources/resourceGroups@2021-01-01' = {
   name: rgName
@@ -34,6 +34,8 @@ module app 'Module/app.bicep' = {
     privateEndpointName: privateendpointname 
     privateLinkConnectionName: privateLinkConnectionName
     subnetidforvnetinjection: subnetidforvnetinjection
+    privateDnsZonesId: privateDnsZonesId
+    location: location
   }
   dependsOn: [
     asp,appinsights

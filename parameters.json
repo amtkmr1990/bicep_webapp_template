@@ -15,7 +15,7 @@
             "value": "as-amtkmr-dev" 
         },
         "subnetidforprivatelink": {
-            "value": "/subscriptions/bba2c874-6268-48fb-b2c2-4b110514f730/resourceGroups/rg-it-dev/providers/Microsoft.Network/virtualNetworks/vnet-it-dev/subnets/privatelinksubnet" 
+            "value": "/subscriptions/bba2c874-6268-48fb-b2c2-4b110514f730/resourceGroups/rg-amtkmrshared-dev/providers/Microsoft.Network/virtualNetworks/vnet-amtkmrshared-dev/subnets/privateendpoints" 
         },
         "privateendpointname": {
             "value": "webappprivateendpoint" 
@@ -24,7 +24,10 @@
             "value": "webappprivatelink" 
         },
         "subnetidforvnetinjection": {
-            "value": "/subscriptions/bba2c874-6268-48fb-b2c2-4b110514f730/resourceGroups/rg-it-dev/providers/Microsoft.Network/virtualNetworks/vnet-it-dev/subnets/vnetintegration" 
+            "value": "/subscriptions/bba2c874-6268-48fb-b2c2-4b110514f730/resourceGroups/rg-amtkmrshared-dev/providers/Microsoft.Network/virtualNetworks/vnet-amtkmrshared-dev/subnets/default" 
+        },
+        "privateDnsZonesId":{
+            "value": "/subscriptions/bba2c874-6268-48fb-b2c2-4b110514f730/resourceGroups/rg-amtkmrshared-dev/providers/Microsoft.Network/privateDnsZones/privatelink.azurewebsites.net"
         }  
     }
 }
