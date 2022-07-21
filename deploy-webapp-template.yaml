@@ -3,6 +3,14 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+resources:
+  pipelines:
+  - pipeline: AftervNetPipeline  
+    source: github_vnet_bicep_template  
+    trigger:    
+      stages:
+        - dev
+        
 trigger: none 
 
 pool:
