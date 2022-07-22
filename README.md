@@ -1,7 +1,11 @@
 <h1> Summary </h1>
 
-This IaaC is for Azure and written in bicep language. 
-This IaaC can create resource group, web app, app insights, App Service Plan. 
+The following sample template creates 
+- resource group
+- web app with system managed identity 
+- app insights
+- App Service Plan Linux 
+- web app private endpoint and link to subnet 
 
 <h1> How it works </h1>
 
