@@ -9,9 +9,9 @@ login to azure account using below command
 
 <code> az login </code>
 
-main.bicep is the main module to run 
+main.bicep is the main module to run and parameters.json is the paramter file to pass 
 
-<code> az deployment sub create -f .\main.bicep -l eastus </code>
+<code> az deployment sub create -f .\main.bicep -p parameters.json -l eastus </code>
 
 <h1> Refer related links </h1>
 
