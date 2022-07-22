@@ -20,3 +20,7 @@ main.bicep is the main module to run and parameters.json is the paramter file to
 <h1> Refer related links </h1>
 
 https://github.com/amtkmr1990/vnet-biceptemplate
+
+https://github.com/amtkmr1990/bicep_VM_template
+
+https://github.com/amtkmr1990/bicep_azuresqldb_template
