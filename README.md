@@ -1,13 +1,17 @@
+<h1> Summary </h1>
+
 This IaaC is for Azure and written in bicep language. 
 This IaaC can create resource group, web app, app insights, App Service Plan. 
 
+<h1> How it works </h1>
+
 login to azure account using below command 
 
-az login 
+<code> az login </code>
 
 main.bicep is the main module to run 
 
-az deployment sub create -f .\main.bicep -l eastus 
+<code> az deployment sub create -f .\main.bicep -l eastus </code>
 
 <h1> Refer related links </h1>
 
