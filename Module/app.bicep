@@ -27,6 +27,9 @@ resource webApplication 'Microsoft.Web/sites@2022-03-01' = {
       http20Enabled: false
     }
   }
+  identity: {
+    type:'SystemAssigned'
+  }
 
 }
 
